@@ -1,5 +1,5 @@
 [package]
-name = "dsn-node-primitives"
+name = "sxn-node-primitives"
 authors = ["SafeXNetwork"]
 edition = "2021"
 version = "0.1.0"
@@ -21,7 +21,7 @@ hex = { version = "0.4", default-features = false, optional = true }
 bls-signatures = { version = "0.13.1", optional = true }
 libsecp256k1 = { version = "0.3.2", default-features = false, features = ["hmac"], optional = true }
 
-chain-bridge = { path = "../chain-bridge", package = "dsn-chain-bridge"}
+chain-bridge = { path = "../chain-bridge", package = "sxn-chain-bridge"}
 
 [features]
 default = ["std", "crypto"]

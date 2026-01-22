@@ -1025,32 +1025,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "dsn-chain-bridge"
-version = "0.1.0"
-dependencies = [
- "hex",
- "parity-scale-codec",
- "serde",
-]
-
-[[package]]
-name = "dsn-node-primitives"
-version = "0.1.0"
-dependencies = [
- "bls-signatures",
- "dsn-chain-bridge",
- "fp-account",
- "hex",
- "libsecp256k1 0.3.5",
- "serde",
- "sha2 0.9.9",
- "sha3 0.9.1",
- "sp-core",
- "sp-io",
- "sp-runtime",
-]
-
-[[package]]
 name = "dyn-clonable"
 version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1243,11 +1217,11 @@ dependencies = [
  "parity-scale-codec",
  "scale-info",
  "serde",
- "sp-core",
- "sp-io",
- "sp-runtime",
- "sp-runtime-interface 17.0.0",
- "sp-std 8.0.0",
+ "sp-core 21.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-io 23.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-runtime 24.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-runtime-interface 17.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-std 8.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
 ]
 
 [[package]]
@@ -2724,14 +2698,41 @@ checksum = "3c5e1a9a646d36c3599cd173a41282daf47c44583ad367b8e6837255952e5c67"
 [[package]]
 name = "sp-application-crypto"
 version = "23.0.0"
+source = "git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
+dependencies = [
+ "parity-scale-codec",
+ "scale-info",
+ "serde",
+ "sp-core 21.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-io 23.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-std 8.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+]
+
+[[package]]
+name = "sp-application-crypto"
+version = "23.0.0"
 source = "git+https://github.com/safexn/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
 dependencies = [
  "parity-scale-codec",
  "scale-info",
  "serde",
- "sp-core",
- "sp-io",
- "sp-std 8.0.0",
+ "sp-core 21.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-io 23.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-std 8.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+]
+
+[[package]]
+name = "sp-arithmetic"
+version = "16.0.0"
+source = "git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
+dependencies = [
+ "integer-sqrt",
+ "num-traits",
+ "parity-scale-codec",
+ "scale-info",
+ "serde",
+ "sp-std 8.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "static_assertions",
 ]
 
 [[package]]
@@ -2744,7 +2745,7 @@ dependencies = [
  "parity-scale-codec",
  "scale-info",
  "serde",
- "sp-std 8.0.0",
+ "sp-std 8.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
  "static_assertions",
 ]
 
@@ -2764,6 +2765,52 @@ source = "git+https://github.com/paritytech/arkworks-substrate#caa2eed74beb885dd
 dependencies = [
  "ark-ed-on-bls12-381-bandersnatch-ext",
  "sp-crypto-ec-utils",
+]
+
+[[package]]
+name = "sp-core"
+version = "21.0.0"
+source = "git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
+dependencies = [
+ "array-bytes",
+ "bandersnatch_vrfs",
+ "bip39",
+ "bitflags 1.3.2",
+ "blake2",
+ "bounded-collections",
+ "bs58",
+ "dyn-clonable",
+ "ed25519-zebra",
+ "futures",
+ "hash-db",
+ "hash256-std-hasher",
+ "impl-serde",
+ "itertools",
+ "libsecp256k1 0.7.1",
+ "log",
+ "merlin",
+ "parity-scale-codec",
+ "parking_lot",
+ "paste",
+ "primitive-types 0.12.2",
+ "rand 0.8.5",
+ "scale-info",
+ "schnorrkel",
+ "secp256k1",
+ "secrecy",
+ "serde",
+ "sp-core-hashing 9.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-debug-derive 8.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-externalities 0.19.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-runtime-interface 17.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-std 8.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-storage 13.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "ss58-registry",
+ "substrate-bip39",
+ "thiserror",
+ "tracing",
+ "w3f-bls",
+ "zeroize",
 ]
 
 [[package]]
@@ -2798,18 +2845,31 @@ dependencies = [
  "secp256k1",
  "secrecy",
  "serde",
- "sp-core-hashing",
- "sp-debug-derive 8.0.0",
- "sp-externalities 0.19.0",
- "sp-runtime-interface 17.0.0",
- "sp-std 8.0.0",
- "sp-storage 13.0.0",
+ "sp-core-hashing 9.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-debug-derive 8.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-externalities 0.19.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-runtime-interface 17.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-std 8.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-storage 13.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
  "ss58-registry",
  "substrate-bip39",
  "thiserror",
  "tracing",
  "w3f-bls",
  "zeroize",
+]
+
+[[package]]
+name = "sp-core-hashing"
+version = "9.0.0"
+source = "git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
+dependencies = [
+ "blake2b_simd",
+ "byteorder",
+ "digest 0.10.7",
+ "sha2 0.10.8",
+ "sha3 0.10.8",
+ "twox-hash",
 ]
 
 [[package]]
@@ -2848,6 +2908,16 @@ dependencies = [
 [[package]]
 name = "sp-debug-derive"
 version = "8.0.0"
+source = "git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.79",
+]
+
+[[package]]
+name = "sp-debug-derive"
+version = "8.0.0"
 source = "git+https://github.com/safexn/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
 dependencies = [
  "proc-macro2",
@@ -2868,12 +2938,23 @@ dependencies = [
 [[package]]
 name = "sp-externalities"
 version = "0.19.0"
+source = "git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
+dependencies = [
+ "environmental",
+ "parity-scale-codec",
+ "sp-std 8.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-storage 13.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+]
+
+[[package]]
+name = "sp-externalities"
+version = "0.19.0"
 source = "git+https://github.com/safexn/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
 dependencies = [
  "environmental",
  "parity-scale-codec",
- "sp-std 8.0.0",
- "sp-storage 13.0.0",
+ "sp-std 8.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-storage 13.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
 ]
 
 [[package]]
@@ -2889,6 +2970,30 @@ dependencies = [
 [[package]]
 name = "sp-io"
 version = "23.0.0"
+source = "git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
+dependencies = [
+ "bytes",
+ "ed25519-dalek",
+ "libsecp256k1 0.7.1",
+ "log",
+ "parity-scale-codec",
+ "rustversion",
+ "secp256k1",
+ "sp-core 21.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-externalities 0.19.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-keystore 0.27.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-runtime-interface 17.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-state-machine 0.28.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-std 8.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-tracing 10.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-trie 22.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "tracing",
+ "tracing-core",
+]
+
+[[package]]
+name = "sp-io"
+version = "23.0.0"
 source = "git+https://github.com/safexn/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
 dependencies = [
  "bytes",
@@ -2898,16 +3003,28 @@ dependencies = [
  "parity-scale-codec",
  "rustversion",
  "secp256k1",
- "sp-core",
- "sp-externalities 0.19.0",
- "sp-keystore",
- "sp-runtime-interface 17.0.0",
- "sp-state-machine",
- "sp-std 8.0.0",
- "sp-tracing 10.0.0",
- "sp-trie",
+ "sp-core 21.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-externalities 0.19.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-keystore 0.27.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-runtime-interface 17.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-state-machine 0.28.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-std 8.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-tracing 10.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-trie 22.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
  "tracing",
  "tracing-core",
+]
+
+[[package]]
+name = "sp-keystore"
+version = "0.27.0"
+source = "git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
+dependencies = [
+ "parity-scale-codec",
+ "parking_lot",
+ "sp-core 21.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-externalities 0.19.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "thiserror",
 ]
 
 [[package]]
@@ -2917,9 +3034,19 @@ source = "git+https://github.com/safexn/polkadot-sdk?branch=deep#acc55994ad5c8f0
 dependencies = [
  "parity-scale-codec",
  "parking_lot",
- "sp-core",
- "sp-externalities 0.19.0",
+ "sp-core 21.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-externalities 0.19.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
  "thiserror",
+]
+
+[[package]]
+name = "sp-panic-handler"
+version = "8.0.0"
+source = "git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
+dependencies = [
+ "backtrace",
+ "lazy_static",
+ "regex",
 ]
 
 [[package]]
@@ -2930,6 +3057,30 @@ dependencies = [
  "backtrace",
  "lazy_static",
  "regex",
+]
+
+[[package]]
+name = "sp-runtime"
+version = "24.0.0"
+source = "git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
+dependencies = [
+ "docify",
+ "either",
+ "hash256-std-hasher",
+ "impl-trait-for-tuples",
+ "log",
+ "parity-scale-codec",
+ "paste",
+ "rand 0.8.5",
+ "scale-info",
+ "serde",
+ "simple-mermaid",
+ "sp-application-crypto 23.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-arithmetic 16.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-core 21.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-io 23.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-std 8.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-weights 20.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
 ]
 
 [[package]]
@@ -2948,12 +3099,30 @@ dependencies = [
  "scale-info",
  "serde",
  "simple-mermaid",
- "sp-application-crypto",
- "sp-arithmetic",
- "sp-core",
- "sp-io",
- "sp-std 8.0.0",
- "sp-weights",
+ "sp-application-crypto 23.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-arithmetic 16.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-core 21.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-io 23.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-std 8.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-weights 20.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+]
+
+[[package]]
+name = "sp-runtime-interface"
+version = "17.0.0"
+source = "git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
+dependencies = [
+ "bytes",
+ "impl-trait-for-tuples",
+ "parity-scale-codec",
+ "primitive-types 0.12.2",
+ "sp-externalities 0.19.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-runtime-interface-proc-macro 11.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-std 8.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-storage 13.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-tracing 10.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-wasm-interface 14.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "static_assertions",
 ]
 
 [[package]]
@@ -2965,12 +3134,12 @@ dependencies = [
  "impl-trait-for-tuples",
  "parity-scale-codec",
  "primitive-types 0.12.2",
- "sp-externalities 0.19.0",
- "sp-runtime-interface-proc-macro 11.0.0",
- "sp-std 8.0.0",
- "sp-storage 13.0.0",
- "sp-tracing 10.0.0",
- "sp-wasm-interface 14.0.0",
+ "sp-externalities 0.19.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-runtime-interface-proc-macro 11.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-std 8.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-storage 13.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-tracing 10.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-wasm-interface 14.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
  "static_assertions",
 ]
 
@@ -2991,6 +3160,19 @@ dependencies = [
  "sp-tracing 16.0.0",
  "sp-wasm-interface 20.0.0",
  "static_assertions",
+]
+
+[[package]]
+name = "sp-runtime-interface-proc-macro"
+version = "11.0.0"
+source = "git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
+dependencies = [
+ "Inflector",
+ "expander",
+ "proc-macro-crate",
+ "proc-macro2",
+ "quote",
+ "syn 2.0.79",
 ]
 
 [[package]]
@@ -3022,6 +3204,27 @@ dependencies = [
 [[package]]
 name = "sp-state-machine"
 version = "0.28.0"
+source = "git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
+dependencies = [
+ "hash-db",
+ "log",
+ "parity-scale-codec",
+ "parking_lot",
+ "rand 0.8.5",
+ "smallvec",
+ "sp-core 21.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-externalities 0.19.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-panic-handler 8.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-std 8.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-trie 22.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "thiserror",
+ "tracing",
+ "trie-db",
+]
+
+[[package]]
+name = "sp-state-machine"
+version = "0.28.0"
 source = "git+https://github.com/safexn/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
 dependencies = [
  "hash-db",
@@ -3030,15 +3233,20 @@ dependencies = [
  "parking_lot",
  "rand 0.8.5",
  "smallvec",
- "sp-core",
- "sp-externalities 0.19.0",
- "sp-panic-handler",
- "sp-std 8.0.0",
- "sp-trie",
+ "sp-core 21.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-externalities 0.19.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-panic-handler 8.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-std 8.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-trie 22.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
  "thiserror",
  "tracing",
  "trie-db",
 ]
+
+[[package]]
+name = "sp-std"
+version = "8.0.0"
+source = "git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
 
 [[package]]
 name = "sp-std"
@@ -3053,14 +3261,27 @@ source = "git+https://github.com/paritytech/polkadot-sdk#d5b96e9e7f24adc1799f8e4
 [[package]]
 name = "sp-storage"
 version = "13.0.0"
+source = "git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
+dependencies = [
+ "impl-serde",
+ "parity-scale-codec",
+ "ref-cast",
+ "serde",
+ "sp-debug-derive 8.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-std 8.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+]
+
+[[package]]
+name = "sp-storage"
+version = "13.0.0"
 source = "git+https://github.com/safexn/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
 dependencies = [
  "impl-serde",
  "parity-scale-codec",
  "ref-cast",
  "serde",
- "sp-debug-derive 8.0.0",
- "sp-std 8.0.0",
+ "sp-debug-derive 8.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-std 8.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
 ]
 
 [[package]]
@@ -3078,10 +3299,22 @@ dependencies = [
 [[package]]
 name = "sp-tracing"
 version = "10.0.0"
+source = "git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
+dependencies = [
+ "parity-scale-codec",
+ "sp-std 8.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "tracing",
+ "tracing-core",
+ "tracing-subscriber 0.2.25",
+]
+
+[[package]]
+name = "sp-tracing"
+version = "10.0.0"
 source = "git+https://github.com/safexn/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
 dependencies = [
  "parity-scale-codec",
- "sp-std 8.0.0",
+ "sp-std 8.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
  "tracing",
  "tracing-core",
  "tracing-subscriber 0.2.25",
@@ -3101,6 +3334,30 @@ dependencies = [
 [[package]]
 name = "sp-trie"
 version = "22.0.0"
+source = "git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
+dependencies = [
+ "ahash 0.8.11",
+ "hash-db",
+ "lazy_static",
+ "memory-db",
+ "nohash-hasher",
+ "parity-scale-codec",
+ "parking_lot",
+ "rand 0.8.5",
+ "scale-info",
+ "schnellru",
+ "sp-core 21.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-externalities 0.19.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-std 8.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "thiserror",
+ "tracing",
+ "trie-db",
+ "trie-root",
+]
+
+[[package]]
+name = "sp-trie"
+version = "22.0.0"
 source = "git+https://github.com/safexn/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
 dependencies = [
  "ahash 0.8.11",
@@ -3113,13 +3370,26 @@ dependencies = [
  "rand 0.8.5",
  "scale-info",
  "schnellru",
- "sp-core",
- "sp-externalities 0.19.0",
- "sp-std 8.0.0",
+ "sp-core 21.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-externalities 0.19.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-std 8.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
  "thiserror",
  "tracing",
  "trie-db",
  "trie-root",
+]
+
+[[package]]
+name = "sp-wasm-interface"
+version = "14.0.0"
+source = "git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
+dependencies = [
+ "anyhow",
+ "impl-trait-for-tuples",
+ "log",
+ "parity-scale-codec",
+ "sp-std 8.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "wasmtime",
 ]
 
 [[package]]
@@ -3131,7 +3401,7 @@ dependencies = [
  "impl-trait-for-tuples",
  "log",
  "parity-scale-codec",
- "sp-std 8.0.0",
+ "sp-std 8.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
  "wasmtime",
 ]
 
@@ -3149,6 +3419,21 @@ dependencies = [
 [[package]]
 name = "sp-weights"
 version = "20.0.0"
+source = "git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
+dependencies = [
+ "bounded-collections",
+ "parity-scale-codec",
+ "scale-info",
+ "serde",
+ "smallvec",
+ "sp-arithmetic 16.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-debug-derive 8.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+ "sp-std 8.0.0 (git+https://github.com/DeepSecurityNetwork/polkadot-sdk?branch=deep)",
+]
+
+[[package]]
+name = "sp-weights"
+version = "20.0.0"
 source = "git+https://github.com/safexn/polkadot-sdk?branch=deep#acc55994ad5c8f032129b7a9f257642e6c3c5de8"
 dependencies = [
  "bounded-collections",
@@ -3156,9 +3441,9 @@ dependencies = [
  "scale-info",
  "serde",
  "smallvec",
- "sp-arithmetic",
- "sp-debug-derive 8.0.0",
- "sp-std 8.0.0",
+ "sp-arithmetic 16.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-debug-derive 8.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-std 8.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
 ]
 
 [[package]]
@@ -3222,6 +3507,32 @@ name = "subtle"
 version = "2.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6bdef32e8150c2a081110b42772ffe7d7c9032b606bc226c8260fd97e0976601"
+
+[[package]]
+name = "sxn-chain-bridge"
+version = "0.1.0"
+dependencies = [
+ "hex",
+ "parity-scale-codec",
+ "serde",
+]
+
+[[package]]
+name = "sxn-node-primitives"
+version = "0.1.0"
+dependencies = [
+ "bls-signatures",
+ "fp-account",
+ "hex",
+ "libsecp256k1 0.3.5",
+ "serde",
+ "sha2 0.9.9",
+ "sha3 0.9.1",
+ "sp-core 21.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-io 23.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sp-runtime 24.0.0 (git+https://github.com/safexn/polkadot-sdk?branch=deep)",
+ "sxn-chain-bridge",
+]
 
 [[package]]
 name = "syn"
