@@ -1,6 +1,6 @@
 [package]
 name = "dsn-chain-bridge"
-authors = ["DeepSecurityNetwork"]
+authors = ["SafeXNetwork"]
 version = "0.1.0"
 edition = "2021"
 

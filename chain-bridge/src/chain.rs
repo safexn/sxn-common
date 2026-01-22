@@ -1,6 +1,6 @@
-// This file is part of DeepSecurityNetwork.
+// This file is part of SafeXNetwork.
 
-// Copyright (C) DeepSecurityNetwork (HK) Ltd.
+// Copyright (C) SafeXNetwork (HK) Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -103,7 +103,7 @@ pub const DUCK_TESTNET: u32 = 202105;
 
 pub const LOCAL_CHAIN: u32 = 31337;
 
-// Defined by DeepSecurityNetwork
+// Defined by SafeXNetwork
 // ChainId = sha2.hash256(chain_name)[..4] as u32
 // Mainnet
 // "Bitcoin-Mainnet"
